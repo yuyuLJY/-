@@ -1,0 +1,25 @@
+package edu.Isosceles;
+public class Isosceles {
+	public static void main(String[] args) {
+		final int N = 11;//一共有11行
+		int[][] a=new int [N][N];
+			for(int i=0;i<N;i++) {
+				for(int j=N;j>i;j--) {
+					System.out.printf("%2s", "");//打印倒三角
+				}
+				for(int j=0;j<=i;j++) {
+					if(j==0 || i==j) {
+					a[i][0]=a[i][j]=1;//头尾全部赋值为1
+					//System.out.print(a[i][j]);
+					System.out.printf("%4d",a[i][j]);
+					}
+					if(j>0 && j<i) {
+					a[i][j]=a[i-1][j-1]+a[i-1][j];//杨辉三角形的中间数字满足的规律
+					//System.out.print(a[i][j]);
+					System.out.printf("%4d", a[i][j]);
+					}
+				}
+				System.out.println();
+			}
+	       }
+	}
